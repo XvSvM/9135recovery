@@ -8,14 +8,14 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common Twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from oppen device
 $(call inherit-product, device/droidlogic/oppen/device.mk)
 
 PRODUCT_DEVICE := oppen
-PRODUCT_NAME := omni_oppen
+PRODUCT_NAME := twrp_oppen
 PRODUCT_BRAND := Droidlogic
 PRODUCT_MODEL := oppen
 PRODUCT_MANUFACTURER := droidlogic
