@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_oppen.mk
+    $(LOCAL_DIR)/twrp_oppen.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_oppen-user \
-    omni_oppen-userdebug \
-    omni_oppen-eng
+    twrp_oppen-user \
+    twrp_oppen-userdebug \
+    twrp_oppen-eng
