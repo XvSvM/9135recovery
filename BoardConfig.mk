@@ -47,14 +47,13 @@ BOARD_HEADER_SIZE := 2112
 BOARD_DTB_SIZE := 294912
 BOARD_DTB_OFFSET := 0xffffffffffe88000
 
-BOARD_MKBOOTIMG_ARGS += \
-    --header_version $(BOARD_BOOT_HEADER_VERSION) \
-    --base $(BOARD_KERNEL_BASE) \
-    --kernel_offset $(BOARD_KERNEL_OFFSET) \
-    --pagesize $(BOARD_KERNEL_PAGESIZE) \
-    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
-    --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
+#BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
+BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET))
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
