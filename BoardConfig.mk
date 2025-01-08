@@ -33,10 +33,29 @@ TARGET_SCREEN_DENSITY := 320
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 3
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.dtbo_idx=0 androidboot.boot_devices=soc/fe08c000.mmc use_uvm=1 buildvariant=user
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_CONFIG := oppen_defconfig
 TARGET_KERNEL_SOURCE := kernel/droidlogic/oppen
+
+# My9135
+BOARD_KERNEL_BASE := 0x02078000
+BOARD_PAGE_SIZE := 2048
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_RAMDISK_OFFSET := 0xfef88000
+BOARD_TAGS_OFFSET := 0xfdf88100
+BOARD_HEADER_VERSION := 3
+BOARD_HEADER_SIZE := 2112
+BOARD_DTB_SIZE := 294912
+BOARD_DTB_OFFSET := 0xffffffffffe88000
+
+BOARD_MKBOOTIMG_ARGS += \
+    --header_version $(BOARD_BOOT_HEADER_VERSION) \
+    --base $(BOARD_KERNEL_BASE) \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+    --pagesize $(BOARD_KERNEL_PAGESIZE) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
+    --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
