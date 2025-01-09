@@ -16,6 +16,7 @@
 /tee               ext4     /dev/block/tee               flags=display=tee;backup=1;flashimg=1
 /cache             ext4     /dev/block/cache             flags=display=cache;backup=1;flashimg=1
 /data              ext4     /dev/block/userdata          flags=display=data;backup=1;flashimg=1
+
 /sdcard            vfat     /dev/block/mmcblk1p1         flags=display=sdcard
 /sdcard            vfat     /dev/block/mmcblk1p2         flags=display=sdcard;backup=1;flashimg=1
 /sdcard            vfat     /dev/block/mmcblk1p3         flags=display=sdcard
